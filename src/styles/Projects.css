@@ -1,0 +1,125 @@
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-row {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+}
+
+.project-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.filter-button {
+    background-color: var(--button-blue);
+    color: #000;
+    border: 1px solid #09026933;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-button:hover {
+    background-color: #c8e2f8d1;
+    transform: translateY(-2px);
+}
+
+.filter-button.active {
+    background-color: #93c5fd; /* duller blue */
+}
+
+[data-theme="dark"] .filter-button.active {
+    background-color: #3b5b84; /* muted dark blue */
+}
+
+[data-theme="dark"] .filter-button {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--accent-color);
+}
+
+[data-theme="dark"] .filter-button:hover {
+    background-color: var(--accent-color);
+}
+
+.clear-button {
+    background-color: #efd4d486 !important;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #09026933 !important;
+    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.3s ease-out;
+}
+
+[data-theme="dark"] .clear-button {
+    background-color: #5a2c2c88 !important;
+    border-color: #c4bdf633 !important;
+}
+
+.clear-button:hover {
+    background-color: #f0b4b4 !important;
+    transform: translateY(-2px);
+}
+
+[data-theme="dark"] .clear-button:hover {
+    background-color: #7d3a3a !important;
+}
+
+.clear-button svg {
+    transition: transform 0.3s ease;
+}
+
+.clear-button:hover svg {
+    transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-container {
+        justify-content: center;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

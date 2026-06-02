@@ -1,0 +1,52 @@
+.card {
+    background-color: var(--light-blue-bg);
+    border-radius: 10px;
+    border: 1px solid var(--light-blue-border);
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px var(--shadow-hover);
+}
+
+.card-header {
+    display: flex;
+    align-items: start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.icon-container {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.card p {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.card a {
+    color: var(--link-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-color);
+    transition: all 0.3s ease;
+}
+
+.card a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}

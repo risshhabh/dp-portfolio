@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+:root {
+    --text-color: #212529;
+    --bg-color: #fff;
+    --nav-bg: #fff;
+    --nav-bg-rgb: 255, 255, 255;
+    --card-bg: #e6f1ff;
+    --accent-color: #a7c5eb;
+    --accent-hover: #8db0e0;
+    --link-color: #1261af;
+    --link-hover: #8db0e0;
+    --border-color: #f0f0f0;
+    --secondary-text: #555;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --shadow-hover: rgba(0, 0, 0, 0.1);
+    --section-line: #a7c5eb;
+    --icon-fill: #212529;
+    --button-blue: #d9eaf9;
+    --button-blue-rgb: 217, 234, 249;
+    --button-blue-hover: #c7dff8;
+    --info-card-bg: #e6f1ff;
+    --education-card-bg: #f8f9fa;
+    --light-blue-bg: #f0f8ffac;
+    --light-blue-border: #c5d9f1ab;
+
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --font-serif: 'Libre Baskerville', serif;
+}
+
+[data-theme="dark"] {
+    --text-color: #f0f0f0;
+    --bg-color: #1a1a1a;
+    --nav-bg: #1a1a1a;
+    --nav-bg-rgb: 26, 26, 26;
+    --top-nav-bg: #121212;
+    --card-bg: #2d3748;
+    --accent-color: #4a5568;
+    --accent-hover: #667eea;
+    --border-color: #2d3748;
+    --secondary-text: #a0aec0;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --shadow-hover: rgba(0, 0, 0, 0.3);
+    --section-line: #4a5568;
+    --icon-fill: #f0f0f0;
+    --info-card-bg: #2d3748;
+    --education-card-bg: #262626;
+    --light-blue-bg: #102030cc;
+    --light-blue-border: #3a4f6dcc;
+    --button-blue: #2b3f55;
+    --button-blue-rgb: 43, 63, 85;
+    --button-blue-hover: #37516a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: var(--font-serif)
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-bottom: 1rem;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.container {
+    width: 50%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+
+.link {
+    color: var(--link-color);
+    text-decoration: none !important;
+    border-bottom: 1px solid var(--link-color);
+    transition: all 0.3s ease;
+}
+
+.link:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--accent-hover);
+}

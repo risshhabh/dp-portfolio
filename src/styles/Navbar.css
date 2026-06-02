@@ -1,0 +1,340 @@
+.nav-width {
+    width: 80%;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--nav-bg);
+    box-shadow: 0 2px 5px var(--shadow-color);
+    padding: 1rem 0;
+    position: sticky;
+    z-index: 100;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.top-navbar {
+    padding: 1.5rem 0;
+    position: relative;
+    top: 0;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--top-nav-bg, var(--nav-bg));
+    transition: background-color 0.3s ease;
+}
+
+.main-navbar {
+    background-color: rgba(var(--nav-bg-rgb), 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.main-navbar .navbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 24px;
+}
+
+.main-navbar .nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    gap: 20px;
+    justify-content: center;
+}
+
+.main-navbar .nav-item {
+    margin-left: 16px;
+}
+
+.main-navbar .nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 8px 12px;
+    font-weight: 900;
+    position: relative;
+    font-size: 0.95rem;
+    font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.main-navbar .nav-link:hover {
+    color: var(--link-hover);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.main-navbar .nav-link.active {
+    color: var(--link-hover);
+    font-weight: 900;
+    background-color: transparent;
+}
+
+.main-navbar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 0%,
+        var(--border-color) 20%,
+        var(--border-color) 50%,
+        var(--border-color) 80%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .main-navbar .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+    
+    .main-navbar .nav-menu.active {
+        background: rgba(var(--nav-bg-rgb), 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+        padding: 20px 0;
+    }
+
+    .main-navbar .nav-item {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Profile Info Styles */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+#profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    box-shadow: 0 6px 12px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+}
+
+#profile-pic:hover {
+    transform: rotate(-6deg) scale(1.05);
+    box-shadow: 0 8px 16px var(--shadow-hover);
+}
+
+.profile-name {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 0rem;
+}
+
+.profile-title {
+    font-size: 1.1rem;
+    color: var(--secondary-text);
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    transition: transform 0.3s ease;
+    color: var(--icon-fill);
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.social-icon img, .social-icon svg {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.social-icon svg path {
+    fill: var(--icon-fill);
+    transition: fill 0.3s ease;
+}
+
+[data-theme="dark"] .social-svg {
+    filter: invert(1);
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-left: 0.5rem;
+    padding: 0;
+    color: var(--text-color);
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    z-index: 100;
+    border-radius: 50%;
+    background-color: transparent;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle .sun-icon,
+.dark-mode-toggle .moon-icon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+.dark-mode-toggle:hover {
+    transform: rotate(45deg);
+}
+
+.dark-mode-toggle .sun-icon {
+    stroke: var(--text-color);
+}
+
+html[data-theme="dark"] .dark-mode-toggle .sun-icon {
+    opacity: 0;
+}
+
+html[data-theme="dark"] .dark-mode-toggle .moon-icon {
+    opacity: 1;
+}
+
+html:not([data-theme="dark"]) .dark-mode-toggle .sun-icon {
+    opacity: 1;
+}
+
+html:not([data-theme="dark"]) .dark-mode-toggle .moon-icon {
+    opacity: 0;
+}
+
+/* Ensure SVG icons have proper coloring in different modes */
+html[data-theme="dark"] .social-icon svg path,
+html[data-theme="dark"] .moon-icon path,
+html[data-theme="dark"] .sun-icon path {
+    fill: var(--text-color) !important; /* Force white coloring in dark mode */
+}
+
+/* Centered Nav Links */
+.nav-links.centered {
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding-bottom: 0.2rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link.active {
+    font-weight: 700;
+}
+
+.speakeeg-button {
+    font-size: 0.85rem;
+    font-family: "Space Mono", monospace !important;
+    font-weight: normal !important;
+    text-decoration: none !important;
+    background-color: var(--button-blue);
+    color: var(--text-color);
+    padding: 0.35rem 0.75rem;
+    border: none;
+    border-radius: 1.375rem;
+    font-weight: bold;
+    font-family: "Proxima Nova", sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.speakeeg-button:hover {
+    background-color: var(--button-blue-hover);
+    transform: scale(1.05);
+}

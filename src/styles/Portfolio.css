@@ -1,0 +1,70 @@
+.portfolio-intro {
+    max-width: 800px;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.portfolio-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--accent-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card[role="button"] {
+    cursor: pointer;
+    outline: none;
+}
+
+.portfolio-card[role="button"]:focus-visible {
+    box-shadow: 0 0 0 3px var(--accent-color), 0 4px 12px var(--shadow-hover);
+}
+
+.portfolio-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px var(--shadow-hover);
+}
+
+.portfolio-card-expanded {
+    grid-column: 1 / -1;
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    transition: height 0.3s ease;
+}
+
+.portfolio-card-expanded .portfolio-image {
+    height: 520px;
+}
+
+.portfolio-caption {
+    padding: 0.9rem 1rem 1.1rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+@media (max-width: 900px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-image {
+        height: 230px;
+    }
+
+    .portfolio-card-expanded .portfolio-image {
+        height: 320px;
+    }
+}
